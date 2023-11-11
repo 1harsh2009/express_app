@@ -6,3 +6,52 @@ body {
 a {
   color: #00B7FF;
 }
+body{
+  height: 100%;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.container{
+  width: 300px;
+  height: 300px;
+  box-sizing: border-box;
+  background: linear-gradient(45deg,rgb(43, 0, 128),rgb(34, 0, 101),rgb(32, 3, 91));
+  border-top-right-radius:50% ;
+  color: #ffffff;
+  display: grid;
+}
+.container-header{
+  display: flex;
+  place-items: top;
+  justify-content: center;
+}
+.main{
+  place-items: center;
+}
+.btn{
+  place-items: bottom;
+}
+.btn button{
+  width: 45%;
+  height: 40%;
+  margin-left: 5%;
+  border-radius: 20px;
+  border: none;
+  font-size: larger;
+}
+/* .main-username{
+  position: relative;
+}
+.main-username::before{
+  content: "username";
+  position: absolute;
+  inset: 0;
+  color: #000;
+} 
+
+.main-password{
+  display: grid;
+}
+.main-username{
+  display: grid;
+} */

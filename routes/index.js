@@ -32,6 +32,9 @@ router.post('/login',passport.authenticate('local',{
 
 })
 
+router.get("/log",function(req,res){
+  res.render("log")
+})
 // router.get("/logout",function(res,req,next){
 //   req.logout(function(err){
 //     if(err) {return next(err)};
