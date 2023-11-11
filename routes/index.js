@@ -12,7 +12,8 @@ router.get('/', function(req, res, next) {
 router.post('/register', function(req, res, next) {
   var userData = new usersModel({
     username: req.body.username,
-    password:req.body.password
+    password:req.body.password,
+    email:req.body.email
   })
 
   usersModel.register(userData,req.body.password).then(function(registereduser){
@@ -23,13 +24,14 @@ router.post('/register', function(req, res, next) {
   })
 });
 router.get('/profile',isLoggedIn,function(req,res){
-  res.render("profile")
+  res.render("profile",{username:req.user.username,email:req.user.email})
 })
 router.post('/login',passport.authenticate('local',{
   successRedirect:"/profile",
   failureRedirect:"/"
 }),function(res,req){
-
+  const us = req.body.username
+  res.send(us)
 })
 
 router.get("/log",function(req,res){
