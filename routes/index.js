@@ -6,6 +6,8 @@ const passport = require('passport');
 const localstrategy = require('passport-local').Strategy;
 const multer = require('multer');
 const dp = require('./dp');
+const postModel = require("./post")
+
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -85,7 +87,8 @@ router.post('/register', (req, res) => {
 router.get('/profile', isLoggedIn, async function(req,res){
   var vc = await DpModel.findOne({username:req.user.username})
   var bk = ""
-  
+  var lp = usersModel.countDocuments({}, { hint: "_id_" });
+  console.log(lp);
   if (vc==null)
   {
     bk = "https://i0.wp.com/shortshayari.in/wp-content/uploads/2022/11/whatsapp-dp-100.webp"

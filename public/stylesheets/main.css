@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
 }
-
+body{
+    /* background: #dadada; */
+}
 main {
     width: 100%;
     text-align: center; /* Center the content horizontally within main */
@@ -28,4 +30,12 @@ main {
 .detail {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center; /* Center the content horizontally within .detail */
+}
+
+
+.post-container{
+    width: 90vw;
+    margin-top: 9px;
+    display: block;
+    padding: 0vw 5vw;
 }

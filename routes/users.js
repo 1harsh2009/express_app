@@ -21,7 +21,8 @@ const userSchema = mongoose.Schema({
   dateCreated:{
     type:Date,
     default:Date.now()
-  }
+  },
+  post:[]
 })
 
 userSchema.plugin(plm)
