@@ -10,6 +10,7 @@
     <main>
         <div class="wrapper">
             <div class="div-container">
+                <br>
                 <div class="dp">
                     <img src="<%= img %>" alt="">
                 </div>
@@ -23,6 +24,13 @@
                 </form>
                 <form action="/logout" method="post" >
                     <button type="submit">logout</button>
+                </form>
+                <br>
+                <form action="/createpost" method="post" >
+                    <label for="post-text">enter your text:</label>
+                    <input type="text" name="post-text" id="post-text"/>
+                    <input type="file" name="post-img" id="post-img">
+                    <button type="submit">POST</button>
                 </form>
                 <div class="post-container">
                     <hr>
