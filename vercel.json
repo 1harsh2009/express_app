@@ -1,4 +1,4 @@
-{
+/** {
     "version": 2,
     "builds": [
       {
@@ -7,6 +7,32 @@
       }
     ],
     "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "bin/www"
+      }
+    ]
+  }
+**/
+
+
+
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "bin/**/*",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "handle": "@vercel/node"
+      },
+      {
+        "src": "/api/(.*)",
+        "dest": "bin/www"
+      },
       {
         "src": "/(.*)",
         "dest": "bin/www"
