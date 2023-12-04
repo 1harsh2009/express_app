@@ -142,7 +142,7 @@ router.post("/createpost",isLoggedIn,upload2.single('post-img'),(req,res,next) =
   if(!req.file){
     return res.status(400).send('no file uploaded')
   }
-  res.redirect("/profile")
+  res.send("filw up")
 })
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
