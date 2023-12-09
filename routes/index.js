@@ -151,4 +151,6 @@ function isLoggedIn(req, res, next) {
   
 }
 
+// router.listen(3000)
+
 module.exports = router;
