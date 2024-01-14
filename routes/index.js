@@ -7,6 +7,7 @@ const localstrategy = require('passport-local').Strategy;
 const multer = require('multer');
 const postModel = require("./post")
 const upload2 = require("./multer")
+const sharp = require('sharp');
 
 
 const storage = multer.diskStorage({
@@ -26,6 +27,7 @@ const storage = multer.diskStorage({
             username: req.user.username,
             dp: req.user.username + "." + vd[1]
         });
+        
         DpModel.create(Dpdata)
           .then((registereduser) => {
               console.log(registereduser);
@@ -41,8 +43,17 @@ const storage = multer.diskStorage({
         else {
       // Handle case where user is not authenticated or does not have a username
         res.status(401).send("Unauthorized");
-      }
+      }     
       cb(null, `${req.user.username}`+"."+vd[1]);
+      sharp(file.path)
+        .resize(200, 200)
+        .toFile(`./public/images/${req.user.username}.${vd[1]}`, (err, info) => {
+            if (err) {
+                console.error("Sharp Error:", err);
+            } else {
+                console.log("Sharp Info:", info);
+            }
+        });
       }
       else if (hgo != null){
         DpModel.updateOne(

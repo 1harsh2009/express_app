@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/test')
+mongoose.connect('mongodb+srv://harshuu001:cu!5H@aZkRJ52uk@cluster0.flyzgd7.mongodb.net/test')
 
 const DPSchema = mongoose.Schema({
   username:String,
