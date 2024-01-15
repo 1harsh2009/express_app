@@ -1,8 +1,8 @@
 // server.js
-const app = require('./app'); // Assuming your Express app is in app.js
+const app = require('../app'); // Assuming your Express app is in app.js
 const serverless = require('serverless-http');
 const express = require('express');
-const app = express();
+
 
 app.use(express.json());
 
