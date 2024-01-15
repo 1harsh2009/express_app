@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb+srv://harshuu001:cu!5H@aZkRJ52uk@cluster0.flyzgd7.mongodb.net/test')
+mongoose.connect('mongodb+srv://harsh:harsh001@cluster0.flyzgd7.mongodb.net/?retryWrites=true&w=majority')
 
 const postSchema = mongoose.Schema({
   postText:{
