@@ -1,14 +1,9 @@
 // server.js
 const app = require('../app'); // Assuming your Express app is in app.js
 const serverless = require('serverless-http');
-const express = require('express');
 
-
-app.use(express.json());
 
 // Your existing route handlers and middleware can be defined here
-app.get('/example', (req, res) => {
-  res.json({ message: 'Example response' });
-});
+
 
 module.exports.handler = serverless(app);
